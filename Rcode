@@ -1,0 +1,56 @@
+online_shoppers_intention <- read_csv("C:/Users/rbout/Downloads/online_shoppers_intention.csv")
+
+install.packages("dplyr") 
+install.packages("ggplot2")
+install.packages("readr")
+
+library(dplyr)
+library(ggplot2)
+library(readr)
+
+colnames(online_shoppers_intention)
+
+str(online_shoppers_intention)
+
+product_duration_stats <- online_shoppers_intention %>% 
+  summarise(
+    mean = mean(ProductRelated_Duration, na.rm = TRUE),
+    median = median(ProductRelated_Duration, na.rm = TRUE),
+    sd = sd(ProductRelated_Duration, na.rm = TRUE),
+    range_min = min(ProductRelated_Duration, na.rm = TRUE),
+    range_max = max(ProductRelated_Duration, na.rm = TRUE)
+  )
+print(product_duration_stats)
+
+ggplot(online_shoppers_intention, aes(x = factor(Revenue), y = ProductRelated_Duration)) +
+  geom_boxplot() +
+  labs(title = "ProductRelated Duration by Revenue",
+       x = "Revenue (0 = No, 1 = Yes)",
+       y = "ProductRelated Duration (minutes)") +
+  theme_minimal()
+
+purchased_sessions <- online_shoppers_intention %>% filter(Revenue == 1)
+
+mean_duration <- mean(purchased_sessions$ProductRelated_Duration, na.rm = TRUE)
+sd_duration <- sd(purchased_sessions$ProductRelated_Duration, na.rm = TRUE)
+n <- nrow(purchased_sessions)
+
+se <- sd_duration / sqrt(n)
+
+z_score <- qnorm(0.975)
+margin_of_error <- z_score * se
+
+ci_lower <- mean_duration - margin_of_error
+ci_upper <- mean_duration + margin_of_error
+print(ci_lower)
+print(ci_upper)
+
+
+t_test_result <- t.test(online_shoppers_intention$BounceRates, mu = 0.30, alternative = "less", conf.level = 0.95)
+print(t_test_result)
+
+purchased_sessions <- online_shoppers_intention %>% filter(Revenue == 1)
+non_purchased_sessions <- online_shoppers_intention %>% filter(Revenue == 0)
+
+t_test_comparison <- t.test(purchased_sessions$BounceRates, non_purchased_sessions$BounceRates, var.equal = TRUE)
+print(t_test_comparison)
