@@ -1,0 +1,271 @@
+
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(readr)
+> online_shoppers_intention <- read_csv("online_shoppers_intention.csv")
+Rows: 12330 Columns: 18                                                              
+── Column specification ─────────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (2): Month, VisitorType
+dbl (14): Administrative, Administrative_Duration, Informational, Informational_D...
+lgl  (2): Weekend, Revenue
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(online_shoppers_intention)
+> install.packages("dplyr") 
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.4’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘generics’
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/generics_0.1.3.tar.gz'
+Content type 'application/x-gzip' length 77807 bytes (75 KB)
+==================================================
+downloaded 75 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/dplyr_1.1.4.tar.gz'
+Content type 'application/x-gzip' length 1475398 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+* installing *binary* package ‘generics’ ...
+* DONE (generics)
+* installing *binary* package ‘dplyr’ ...
+* DONE (dplyr)
+
+The downloaded source packages are in
+	‘/tmp/RtmpUnfrqF/downloaded_packages’
+> install.packages("ggplot2")
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.4’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘colorspace’, ‘farver’, ‘labeling’, ‘munsell’, ‘RColorBrewer’, ‘viridisLite’, ‘gtable’, ‘isoband’, ‘scales’
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/colorspace_2.1-1.tar.gz'
+Content type 'application/x-gzip' length 2629335 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/farver_2.1.2.tar.gz'
+Content type 'application/x-gzip' length 1485495 bytes (1.4 MB)
+==================================================
+downloaded 1.4 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/labeling_0.4.3.tar.gz'
+Content type 'application/x-gzip' length 59707 bytes (58 KB)
+==================================================
+downloaded 58 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/munsell_0.5.1.tar.gz'
+Content type 'application/x-gzip' length 242364 bytes (236 KB)
+==================================================
+downloaded 236 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/RColorBrewer_1.1-3.tar.gz'
+Content type 'application/x-gzip' length 53281 bytes (52 KB)
+==================================================
+downloaded 52 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/viridisLite_0.4.2.tar.gz'
+Content type 'application/x-gzip' length 1296920 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/gtable_0.3.6.tar.gz'
+Content type 'application/x-gzip' length 219376 bytes (214 KB)
+==================================================
+downloaded 214 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/isoband_0.2.7.tar.gz'
+Content type 'application/x-gzip' length 1642543 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/scales_1.3.0.tar.gz'
+Content type 'application/x-gzip' length 703254 bytes (686 KB)
+==================================================
+downloaded 686 KB
+
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/ggplot2_3.5.1.tar.gz'
+Content type 'application/x-gzip' length 4957008 bytes (4.7 MB)
+==================================================
+downloaded 4.7 MB
+
+* installing *binary* package ‘colorspace’ ...
+* DONE (colorspace)
+* installing *binary* package ‘farver’ ...
+* DONE (farver)
+* installing *binary* package ‘labeling’ ...
+* DONE (labeling)
+* installing *binary* package ‘RColorBrewer’ ...
+* DONE (RColorBrewer)
+* installing *binary* package ‘viridisLite’ ...
+* DONE (viridisLite)
+* installing *binary* package ‘gtable’ ...
+* DONE (gtable)
+* installing *binary* package ‘isoband’ ...
+* DONE (isoband)
+* installing *binary* package ‘munsell’ ...
+* DONE (munsell)
+* installing *binary* package ‘scales’ ...
+* DONE (scales)
+* installing *binary* package ‘ggplot2’ ...
+* DONE (ggplot2)
+
+The downloaded source packages are in
+	‘/tmp/RtmpUnfrqF/downloaded_packages’
+> install.packages("readr")
+Error in install.packages : Updating loaded packages
+
+Restarting R session...
+
+Installing package into ‘/cloud/lib/x86_64-pc-linux-gnu-library/4.4’
+(as ‘lib’ is unspecified)
+trying URL 'http://rspm/default/__linux__/focal/latest/src/contrib/readr_2.1.5.tar.gz'
+Content type 'application/x-gzip' length 878044 bytes (857 KB)
+==================================================
+downloaded 857 KB
+
+* installing *binary* package ‘readr’ ...
+* DONE (readr)
+
+The downloaded source packages are in
+	‘/tmp/RtmpvODTBR/downloaded_packages’
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> library(ggplot2)
+> library(readr)
+> colnames(online_shoppers_intention)
+ [1] "Administrative"          "Administrative_Duration" "Informational"          
+ [4] "Informational_Duration"  "ProductRelated"          "ProductRelated_Duration"
+ [7] "BounceRates"             "ExitRates"               "PageValues"             
+[10] "SpecialDay"              "Month"                   "OperatingSystems"       
+[13] "Browser"                 "Region"                  "TrafficType"            
+[16] "VisitorType"             "Weekend"                 "Revenue"                
+> str(online_shoppers_intention)
+spc_tbl_ [12,330 × 18] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Administrative         : num [1:12330] 0 0 0 0 0 0 0 1 0 0 ...
+ $ Administrative_Duration: num [1:12330] 0 0 0 0 0 0 0 0 0 0 ...
+ $ Informational          : num [1:12330] 0 0 0 0 0 0 0 0 0 0 ...
+ $ Informational_Duration : num [1:12330] 0 0 0 0 0 0 0 0 0 0 ...
+ $ ProductRelated         : num [1:12330] 1 2 1 2 10 19 1 0 2 3 ...
+ $ ProductRelated_Duration: num [1:12330] 0 64 0 2.67 627.5 ...
+ $ BounceRates            : num [1:12330] 0.2 0 0.2 0.05 0.02 ...
+ $ ExitRates              : num [1:12330] 0.2 0.1 0.2 0.14 0.05 ...
+ $ PageValues             : num [1:12330] 0 0 0 0 0 0 0 0 0 0 ...
+ $ SpecialDay             : num [1:12330] 0 0 0 0 0 0 0.4 0 0.8 0.4 ...
+ $ Month                  : chr [1:12330] "Feb" "Feb" "Feb" "Feb" ...
+ $ OperatingSystems       : num [1:12330] 1 2 4 3 3 2 2 1 2 2 ...
+ $ Browser                : num [1:12330] 1 2 1 2 3 2 4 2 2 4 ...
+ $ Region                 : num [1:12330] 1 1 9 2 1 1 3 1 2 1 ...
+ $ TrafficType            : num [1:12330] 1 2 3 4 4 3 3 5 3 2 ...
+ $ VisitorType            : chr [1:12330] "Returning_Visitor" "Returning_Visitor" "Returning_Visitor" "Returning_Visitor" ...
+ $ Weekend                : logi [1:12330] FALSE FALSE FALSE FALSE TRUE FALSE ...
+ $ Revenue                : logi [1:12330] FALSE FALSE FALSE FALSE FALSE FALSE ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Administrative = col_double(),
+  ..   Administrative_Duration = col_double(),
+  ..   Informational = col_double(),
+  ..   Informational_Duration = col_double(),
+  ..   ProductRelated = col_double(),
+  ..   ProductRelated_Duration = col_double(),
+  ..   BounceRates = col_double(),
+  ..   ExitRates = col_double(),
+  ..   PageValues = col_double(),
+  ..   SpecialDay = col_double(),
+  ..   Month = col_character(),
+  ..   OperatingSystems = col_double(),
+  ..   Browser = col_double(),
+  ..   Region = col_double(),
+  ..   TrafficType = col_double(),
+  ..   VisitorType = col_character(),
+  ..   Weekend = col_logical(),
+  ..   Revenue = col_logical()
+  .. )
+ - attr(*, "problems")=<externalptr> 
+> product_duration_stats <- online_shoppers_intention %>% 
++     summarise(
++         mean = mean(ProductRelated_Duration, na.rm = TRUE),
++         median = median(ProductRelated_Duration, na.rm = TRUE),
++         sd = sd(ProductRelated_Duration, na.rm = TRUE),
++         range_min = min(ProductRelated_Duration, na.rm = TRUE),
++         range_max = max(ProductRelated_Duration, na.rm = TRUE)
++     )
+> > print(product_duration_stats)
+# A tibble: 1 × 5
+   mean median    sd range_min range_max
+  <dbl>  <dbl> <dbl>     <dbl>     <dbl>
+1 1195.   599. 1914.         0    63974.
+> ggplot(online_shoppers_intention, aes(x = factor(Revenue), y = ProductRelated_Duration)) +
++     geom_boxplot() +
++     labs(title = "ProductRelated Duration by Revenue",
++          x = "Revenue (0 = No, 1 = Yes)",
++          y = "ProductRelated Duration (minutes)") +
++     theme_minimal()
+> purchased_sessions <- online_shoppers_intention %>% filter(Revenue == 1)
+> > mean_duration <- mean(purchased_sessions$ProductRelated_Duration, na.rm = TRUE)
+> sd_duration <- sd(purchased_sessions$ProductRelated_Duration, na.rm = TRUE)
+> n <- nrow(purchased_sessions)
+> > se <- sd_duration / sqrt(n)
+> > z_score <- qnorm(0.975)
+> margin_of_error <- z_score * se
+> > # Calculate the confidence interval
+> ci_lower <- mean_duration - margin_of_error
+> ci_upper <- mean_duration + margin_of_error
+> > print(ci_lower)
+[1] 1772.46
+> print(ci_upper)
+[1] 1979.959
+> t_test_result <- t.test(online_shoppers_intention$BounceRates, mu = 0.30, alternative = "less", conf.level = 0.95)
+> > print(t_test_result)
+
+	One Sample t-test
+
+data:  online_shoppers_intention$BounceRates
+t = -636.19, df = 12329, p-value < 2.2e-16
+alternative hypothesis: true mean is less than 0.3
+95 percent confidence interval:
+      -Inf 0.0229097
+sample estimates:
+ mean of x 
+0.02219138 
+
+> purchased_sessions <- online_shoppers_intention %>% filter(Revenue == 1)
+> non_purchased_sessions <- online_shoppers_intention %>% filter(Revenue == 0)
+> > t_test_comparison <- t.test(purchased_sessions$BounceRates, non_purchased_sessions$BounceRates, var.equal = TRUE)
+> > print(t_test_comparison)
+
+	Two Sample t-test
+
+data:  purchased_sessions$BounceRates and non_purchased_sessions$BounceRates
+t = -16.923, df = 12328, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.02253986 -0.01786030
+sample estimates:
+  mean of x   mean of y 
+0.005117153 0.025317232
